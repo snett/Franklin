@@ -98,7 +98,7 @@
             <Name>Translation</Name>
             <Class>\Franklin\Localization\Translation</Class>
         </Object>
-        <!--User--
+        <!--User-->
         <Object>
             <Name>User</Name>
             <Class>\Franklin\User\User</Class>
