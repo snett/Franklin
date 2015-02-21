@@ -1,14 +1,15 @@
 # Franklin
 SNett Franklin - Open-Source Multi-purpose System Core
+Supported by [SNett Systems](snett.net)
 
 ## Requirements
-*Apache2
-*PHP 5.4 + MYSQLI
-*MySQL 5
+* Apache2
+* PHP 5.4 + MYSQLI
+* MySQL 5
 
 ## Preparation
-*Enable Apache Rewrite Module
-*Suggested to have JSONView plug-in in your web browser for testing API output.
+* Enable Apache Rewrite Module
+* Suggested to have JSONView plug-in in your web browser for testing API output.
 
 ## Installation
 1. Create MySQL user and database
