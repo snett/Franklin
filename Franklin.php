@@ -15,6 +15,7 @@ header("Content-type: text/html; charset=utf-8");
 define('RootDir', dirname(__FILE__) . '/');
 
 /* Directories */
+define('APIDir', RootDir . 'API/');
 define('ActionDir', RootDir . 'Actions/');
 define('PageDir', RootDir . 'Pages/');
 define('ModuleDir', RootDir . 'Modules/');
