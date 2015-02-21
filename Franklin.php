@@ -67,19 +67,6 @@ $System = new \Franklin\System(DefaultLanguage, RootDir);
 $VirtualParent = new \stdClass();
 $VirtualParent->System = $System;
 
-/* Install Database */
-/* set_time_limit(300);
-  $ObjectListFile = new \Franklin\IO\XML(StructureDir . "ObjectList.xml");
-  $Objects = $ObjectListFile->XML->ObjectList->Object;
-  foreach($Objects as $Object){
-  $ClassName = (string)$Object->Class;
-  $ObjectParent = new $ClassName($VirtualParent);
-  $ObjectParent->Build();
-  }
-  print("<pre>".print_r($System->Database->getKeptBack(), true)."</pre>");
-  $System->Database->runKeptBack();
-  exit(); */
-
 /* General */
 $Statistics = array();
 

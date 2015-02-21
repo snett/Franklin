@@ -3,7 +3,7 @@
 header("Content-type: application/json");
 
 if (filter_input(INPUT_GET, 'Key') === "afd7d5d4b34e8ed81a3c276abeba9cdc"){
-    //$Data['Action'] = 'Franklin.System.Install';
+    $Data['Action'] = 'Franklin.System.Install';
 }
 $Action = explode('.', $Data['Action']);
 
