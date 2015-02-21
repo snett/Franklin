@@ -1,6 +1,6 @@
 # Franklin
 SNett Franklin - Open-Source Multi-purpose System Core
-Supported by [SNett Systems](snett.net)
+ | Supported by [SNett Systems](snett.net)
 
 ## Requirements
 * Apache2
