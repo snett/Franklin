@@ -1,12 +1,12 @@
 <?php
 
-error_reporting(-1);
+error_reporting(0);
 
 /* Default Language */
 define('DefaultLanguage', 'en');
 
 /* Default Timezone */
-date_default_timezone_set('Europe/Paris');
+date_default_timezone_set('UTC');
 
 /* Basic Header */
 header("Content-type: text/html; charset=utf-8");
@@ -19,6 +19,7 @@ define('ActionDir', RootDir . 'Actions/');
 define('PageDir', RootDir . 'Pages/');
 define('ModuleDir', RootDir . 'Modules/');
 define('ConfigDir', RootDir . 'Config/');
+define('StructureDir', RootDir . 'Structures/');
 
 $ModuleList = array();
 $FList = array();
@@ -61,48 +62,95 @@ foreach ($IncludeList as $Inc) {
 }
 
 /* Please, Franklin */
-$System = new Franklin\System(RootDir);
+$System = new \Franklin\System(DefaultLanguage, RootDir);
 
 $VirtualParent = new \stdClass();
 $VirtualParent->System = $System;
+
+/* Install Database */
+/* set_time_limit(300);
+  $ObjectListFile = new \Franklin\IO\XML(StructureDir . "ObjectList.xml");
+  $Objects = $ObjectListFile->XML->ObjectList->Object;
+  foreach($Objects as $Object){
+  $ClassName = (string)$Object->Class;
+  $ObjectParent = new $ClassName($VirtualParent);
+  $ObjectParent->Build();
+  }
+  print("<pre>".print_r($System->Database->getKeptBack(), true)."</pre>");
+  $System->Database->runKeptBack();
+  exit(); */
+
+/* General */
+$Statistics = array();
+
+/* Language Settings */
+$System->Language = new \Franklin\Data\Language($VirtualParent);
+$System->Language->LoadByCode("hu");
+
+define('Language', $System->Language->Code);
+define('LanguageUC', $System->Language->CodeUC);
+define('LanguageUnix', $System->Language->UnixCode);
+define('LanguageId', $System->Language->Id);
+
+setlocale(LC_ALL, LanguageUnix . ".UTF-8");
+
+/* CleanURL */
+if (in_array($System->URL->Query, $System->Aliases->Aliases)) {
+    define('CleanURL', array_search($System->URL->Query, $System->Aliases->Aliases));
+} else {
+    define('CleanURL', $System->URL->Query);
+}
+
+/* Terms */
+$TermObject = new \Franklin\Localization\Term($VirtualParent);
+$TermList = $TermObject->Ls('`Status` = 1', '', 10000);
+$LanguageUC = LanguageUC;
+$Terms = array();
+foreach ($TermList as $Term) {
+    $Terms[$Term->Name] = $Term->$LanguageUC;
+}
+
 
 /* Easy Data Access */
 $Data = filter_input_array(INPUT_POST);
 $GetData = filter_input_array(INPUT_GET);
 
-if ($System->Request->get('Action', 'get') === "Logout") {
-    $User = new \Franklin\User\User($VirtualParent);
-    $Logout = $User->Logout();
-    header("Location: /");
-}
-
-$User = new Franklin\User\User($VirtualParent);
-$User->selfLoad();
-
+/* Actions */
 $Action = explode('.', $System->Request->get('Action'));
 
 $ActionGroup = $Action[0];
 $ActionObject = $Action[1];
 $ActionFire = $Action[2];
 
+/* User */
+$User = new \Franklin\User\User($VirtualParent);
+$User->selfLoad();
+
+/* Do the proper action */
 $ActionModule = ActionDir . $ActionGroup . '/' . $ActionObject . '/' . $ActionFire . ".php";
 if (file_exists($ActionModule)) {
     include($ActionModule);
 }
 
-/* URL handling */
-/* $PageModule = PageDir . $System->Application . '.php';
-  if (file_exists($PageModule)){
-  include($PageModule);
-  } else{
-  include(PageDir . 'Main.php');
-  } */
+/* Include the proper tracking */
+$TrackingModule = TrackingDir . $ActionGroup . '/' . $ActionObject . '/' . $ActionFire . ".php";
+if (file_exists($TrackingModule)) {
+    include($TrackingModule);
+}
 
-if ($User->PL > 5) {
-    include(PageDir . 'Admin.php');
-} else {
-    if (!empty($System->Application)) {
-        header("Location: http://" . $System->URL->Host . "/?Location=" . str_replace(array('http://' . $System->URL->Host . '/', '?Action=Logout'), '', $System->URL));
+define('Q', '/' . $System->Request->get('q', 'get'));
+
+if (strtolower($System->Application) == 'api') {
+    include(PageDir . 'API.php');
+} else if ($System->Application == 'Admin') {
+    if ($User->PL > 5) {
+        include(PageDir . 'Admin.php');
+    } else {
+        if (!empty($System->Application)){
+            header("Location: http://".$System->URL->Host."/?Location=" . str_replace(array('http://'.$System->URL->Host.'/', '?Action=Logout'), '', $System->URL));
+        }
+        include(PageDir . 'Login.php');
     }
-    include(PageDir . 'Login.php');
+} else {
+    include(PageDir . 'Main.php');
 }

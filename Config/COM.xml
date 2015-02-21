@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <General>
+        <Sender>system@franklin</Sender>
+        <ReplyTo>system@franklin</ReplyTo>
+        <SenderName>Franklin</SenderName>
+        <Deliver>SMTP</Deliver>
+        <SafeMode>false</SafeMode>
+    </General>
+    <Postmark>
+        <Token>[Your Token]</Token>
+        <Inbound>[Your Inbound]@inbound.postmarkapp.com</Inbound>
+    </Postmark>
+    <SMTP>
+        <Host></Host>
+        <Auth>true</Auth>
+        <User></User>
+        <Password></Password>
+        <Secure>ssl</Secure>
+        <Port>465</Port>
+    </SMTP>
+</Config>

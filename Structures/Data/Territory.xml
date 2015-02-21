@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure>
+    <Fields>
+        <Field>
+            <Name>Id</Name>
+            <Type>int</Type>
+            <Length>8</Length>
+            <Index>primary</Index>
+            <Extras>
+                <Extra>autoincrement</Extra>
+            </Extras>
+            <Pattern>numeric</Pattern>
+        </Field>
+        <Field>
+            <Name>Name</Name>
+            <Type>string</Type>
+            <Length>128</Length>
+            <Required>true</Required>
+        </Field>
+        <Field>
+            <Name>Status</Name>
+            <Type>object</Type>
+            <Object>Status</Object>
+            <Class>\Franklin\Basics\Status</Class>
+            <Relation>one</Relation>
+        </Field>
+        <Field>
+            <Name>Country</Name>
+            <Type>object</Type>
+            <Relation>one</Relation>
+        </Field>
+        <Field>
+            <Name>UserTouched</Name>
+            <Type>object</Type>
+            <Object>User</Object>
+            <Class>\Franklin\User\User</Class>
+        </Field>
+    </Fields>
+</Structure>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure>
+    <Fields>
+        <Field>
+            <Name>Id</Name>
+            <Type>int</Type>
+            <Length>8</Length>
+            <Index>primary</Index>
+            <Extras>
+                <Extra>autoincrement</Extra>
+            </Extras>
+            <Pattern>numeric</Pattern>
+            <NotNull>true</NotNull>
+        </Field>
+        <Field>
+            <Name>Element</Name>
+            <Type>string</Type>
+            <Length>64</Length>
+        </Field>
+        <Field>
+            <Name>Name</Name>
+            <Type>string</Type>
+            <Length>64</Length>
+            <Required>true</Required>
+            <NotNull>true</NotNull>
+        </Field>
+    </Fields>
+</Structure>
