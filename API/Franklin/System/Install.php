@@ -31,4 +31,4 @@ foreach ($runKeptBack as $KeptBack) {
     }
 }
 
-$Results['Franklin.System.Install'] = $System->Stream->__print();
+$Results['Franklin.System.Install'] = $System->Stream->Read();

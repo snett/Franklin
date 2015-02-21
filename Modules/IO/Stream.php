@@ -38,6 +38,13 @@ class Stream {
         $this->Channel = $Channel;
     }
     
+    public function Read($Channel=null) {
+        if (empty($Channel)){
+            $Channel = $this->Channel;
+        }
+        return($this->Stream[$Channel]);
+    }
+    
     public function Write($Output, $Channel=null) {
         if (empty($Channel)){
             $Channel = $this->Channel;
