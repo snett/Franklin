@@ -9,7 +9,7 @@ Open-Source Multi-purpose System Core
 
 ## Preparation
 * Enable Apache Rewrite Module
-* Suggested to have JSONView plug-in in your web browser for testing API output.
+* Suggested to install [JSONView](https://addons.mozilla.org/en-Us/firefox/addon/jsonview/) or similar plug-in in your web browser for testing API output
 
 ## Installation
 1. Create MySQL user and database
