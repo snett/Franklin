@@ -1,6 +1,6 @@
 # SNett Franklin
 Open-Source Multi-purpose System Core
- | Supported by [SNett Systems](snett.net)
+ | Supported by [SNett Systems](http://snett.net)
 
 ## Requirements
 * Apache2
