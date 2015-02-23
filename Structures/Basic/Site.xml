@@ -20,10 +20,22 @@
             <NotNull>true</NotNull>
         </Field>
         <Field>
+            <Name>Domain</Name>
+            <Type>string</Type>
+            <Length>128</Length>
+        </Field>
+        <Field>
             <Name>Status</Name>
             <Type>object</Type>
             <Object>Status</Object>
-            <Class>\Franklin\Basics\Status</Class>
+            <Class>\Franklin\Basic\Status</Class>
+            <Relation>one</Relation>
+        </Field>
+        <Field>
+            <Name>Language</Name>
+            <Object>Language</Object>
+            <Class>\Franklin\Data\Language</Class>
+            <Type>object</Type>
             <Relation>one</Relation>
         </Field>
         <Field>

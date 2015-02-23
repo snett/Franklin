@@ -23,7 +23,7 @@
             <Name>Status</Name>
             <Type>object</Type>
             <Object>Status</Object>
-            <Class>\Franklin\Basics\Status</Class>
+            <Class>\Franklin\Basic\Status</Class>
             <Relation>one</Relation>
             <NotNull>true</NotNull>
         </Field>
@@ -33,29 +33,16 @@
             <Length>32</Length>
         </Field>
         <Field>
-            <Name>TitleHU</Name>
+            <Name>Title</Name>
             <Type>string</Type>
             <Length>128</Length>
         </Field>
         <Field>
-            <Name>TitleEN</Name>
-            <Type>string</Type>
-            <Length>128</Length>
-        </Field>
-        <Field>
-            <Name>LeadHU</Name>
+            <Name>Lead</Name>
             <Type>text</Type>
         </Field>
         <Field>
-            <Name>LeadEN</Name>
-            <Type>text</Type>
-        </Field>
-        <Field>
-            <Name>ArticleHU</Name>
-            <Type>text</Type>
-        </Field>
-        <Field>
-            <Name>ArticleEN</Name>
+            <Name>Article</Name>
             <Type>text</Type>
         </Field>
         <Field>

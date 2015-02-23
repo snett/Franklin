@@ -1,6 +1,6 @@
 <?php
 
-$Status = new \Franklin\Basics\Status($VirtualParent);
+$Status = new \Franklin\Basic\Status($VirtualParent);
 
 $Status->Id = $Data['Status_Id'];
 

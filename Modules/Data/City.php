@@ -18,7 +18,7 @@ class City extends \Franklin\System\Object{
     
     public function __construct($Parent) {
         parent::__construct($Parent);
-        $this->Status = new \Franklin\Basics\Status($this);
+        $this->Status = new \Franklin\Basic\Status($this);
         $this->Country = new Country($this);
         $this->Territory = new Territory($this);
     }

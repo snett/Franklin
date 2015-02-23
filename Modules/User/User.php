@@ -41,7 +41,7 @@ class User extends \Franklin\System\Object{
 
     public function __construct($Parent) {
         parent::__construct($Parent);
-        $this->Status = new \Franklin\Basics\Status($this);
+        $this->Status = new \Franklin\Basic\Status($this);
         $this->UsraSession = md5('Usra' . $this->Sec);
     }
     

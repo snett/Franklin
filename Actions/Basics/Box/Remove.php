@@ -1,6 +1,6 @@
 <?php
 
-$Box = new \Franklin\Basics\Box($VirtualParent);
+$Box = new \Franklin\Component\Box($VirtualParent);
 
 $Box->Id = $Data['Box_Id'];
 

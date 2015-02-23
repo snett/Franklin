@@ -29,7 +29,7 @@ class Comment extends \Franklin\System\Object{
     
     public function __construct($Parent) {
         parent::__construct($Parent);
-        $this->Status = new \Franklin\Basics\Status($this);
+        $this->Status = new \Franklin\Basic\Status($this);
         $this->Language = new \Franklin\Data\Language($this);
         $this->User = new \Franklin\User\User($this);
         //$this->Topic = new Topic($this);

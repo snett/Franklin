@@ -4,7 +4,7 @@ $CommentObject = new \Franklin\Forum\Comment($VirtualParent);
 $GLOBALS['CommentObject'] = &$CommentObject;
 
 $SiteCode = $Data['Site'];
-$Site = new \Franklin\Basics\Site($VirtualParent);
+$Site = new \Franklin\Basic\Site($VirtualParent);
 $Site->LoadByCode($SiteCode);
 
 $Comments = $CommentObject->Ls("`Group`=1 AND `Status`=1 AND `Parent`=0 AND `Site`='$Site->Id'", "`Id` DESC");

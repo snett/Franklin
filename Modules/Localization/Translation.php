@@ -25,7 +25,7 @@ class Translation extends \Franklin\System\Object{
         parent::__construct($Parent);
         $this->ElementType = $Parent->ClassName[1] . "\\" . $Parent->Name;
         $this->ElementId = $Parent->Id;
-        $this->Status = new \Franklin\Basics\Status($this);
+        $this->Status = new \Franklin\Basic\Status($this);
         $this->Language = new \Franklin\Data\Language($this);
     }
     

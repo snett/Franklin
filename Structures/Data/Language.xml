@@ -23,7 +23,7 @@
             <Name>Status</Name>
             <Type>object</Type>
             <Object>Status</Object>
-            <Class>\Franklin\Basics\Status</Class>
+            <Class>\Franklin\Basic\Status</Class>
             <Relation>one</Relation>
         </Field>
         <Field>

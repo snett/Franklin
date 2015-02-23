@@ -25,7 +25,7 @@ class Address extends \Franklin\System\Object{
     
     public function __construct($Parent) {
         parent::__construct($Parent);
-        $this->Status = new \Franklin\Basics\Status($this);
+        $this->Status = new \Franklin\Basic\Status($this);
         $this->Country = new \Franklin\Data\Country($this);
         $this->Territory = new \Franklin\Data\Territory($this);
         $this->City = new \Franklin\Data\City($this);

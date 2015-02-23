@@ -20,7 +20,7 @@ class Term extends \Franklin\System\Object{
     
     public function __construct($Parent) {
         parent::__construct($Parent);
-        $this->Status = new \Franklin\Basics\Status($this);
+        $this->Status = new \Franklin\Basic\Status($this);
         $this->UserTouched = new \Franklin\User\User($this);
     }
     

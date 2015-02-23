@@ -17,7 +17,7 @@ class Session {
     public function __construct($System, $Name="") {
         $this->System = $System;
         if (empty($Name)){
-            $this->Name = "SkyeS" . rand(2222, 4444) . date("His");
+            $this->Name = "Franklin." . rand(10001, 28000) . "." . date("His");
         } else{
             $this->Name = $Name;
         }

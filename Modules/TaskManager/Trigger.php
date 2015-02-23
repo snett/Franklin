@@ -75,7 +75,7 @@ class Trigger {
         $Trigger->Conditions->OR[1]->AND[1]->Condition->Object = "Store.OrderItem";
         $Trigger->Conditions->OR[1]->AND[1]->Condition->Field = "Quantity";
         $Trigger->Conditions->OR[1]->AND[1]->Condition->Value = ">=2";
-        $Trigger->Conditions->OR[1]->AND[2]->Condition->Object = "Basics.Site";
+        $Trigger->Conditions->OR[1]->AND[2]->Condition->Object = "Basic.Site";
         $Trigger->Conditions->OR[1]->AND[2]->Condition->Field = "Language.Code";
         $Trigger->Conditions->OR[1]->AND[2]->Condition->Value = "de";
         $Trigger->Reactions->Reaction[0]->Object = "Store.OrderItem";

@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Box Module
+ * Sidebar Module
  *
  * @author Bálint Horváth <balint@snett.net>
  */
 
-namespace Franklin\Basics;
+namespace Franklin\Component;
 
-class Box extends \Franklin\System\Object{
+class Sidebar extends \Franklin\System\Object{
 
     public $Id;
     public $Name;
@@ -16,12 +16,13 @@ class Box extends \Franklin\System\Object{
     public $Language;
     public $CleanURL;
     public $Revision;
-    public $Title;
     public $Place;
+    public $Title;
     public $Content;
     
     public function __construct($Parent) {
         parent::__construct($Parent);
+        $this->Status = new Status($this);
         $this->Language = new \Franklin\Data\Language($this);
     }
     

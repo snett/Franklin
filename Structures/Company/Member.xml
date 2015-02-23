@@ -29,7 +29,7 @@
             <Name>Status</Name>
             <Type>object</Type>
             <Object>Status</Object>
-            <Class>\Franklin\Basics\Status</Class>
+            <Class>\Franklin\Basic\Status</Class>
             <Relation>one</Relation>
             <NotNull>true</NotNull>
         </Field>
@@ -39,11 +39,7 @@
             <Length>32</Length>
         </Field>
         <Field>
-            <Name>BioHU</Name>
-            <Type>text</Type>
-        </Field>
-        <Field>
-            <Name>BioEN</Name>
+            <Name>Bio</Name>
             <Type>text</Type>
         </Field>
         <Field>

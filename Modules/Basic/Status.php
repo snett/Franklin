@@ -5,7 +5,7 @@
  * @author Bálint Horváth <balint@snett.net>
  */
 
-namespace Franklin\Basics;
+namespace Franklin\Basic;
 
 class Status extends \Franklin\System\Object {
     

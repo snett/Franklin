@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Sidebar Module
+ * Page Module
  *
  * @author Bálint Horváth <balint@snett.net>
  */
 
-namespace Franklin\Basics;
+namespace Franklin\Component;
 
-class Sidebar extends \Franklin\System\Object{
+class Page extends \Franklin\System\Object{
 
     public $Id;
     public $Name;
@@ -16,9 +16,13 @@ class Sidebar extends \Franklin\System\Object{
     public $Language;
     public $CleanURL;
     public $Revision;
-    public $Place;
-    public $Title;
+    public $Intro;
     public $Content;
+    
+    public $TimeCreated;
+    public $TimeModified;
+    public $TimeRemoved;
+    public $UserTouched;
     
     public function __construct($Parent) {
         parent::__construct($Parent);

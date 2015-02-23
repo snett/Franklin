@@ -313,7 +313,7 @@ class Database{
         if ($this->TableExists($TableName)){
             throw new Exception("Table $TableName already exists so unable to create. Maybe you want to change it using EditTable method.");
         }
-        /*Basics*/
+        /*Basic*/
         $FieldCount = (int) 0;
         $Last = (bool) false;
         $First = (bool) false;

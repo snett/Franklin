@@ -1,6 +1,6 @@
 <?php
 
-$Menu = new \Franklin\Basics\Menu($VirtualParent);
+$Menu = new \Franklin\Component\Menu($VirtualParent);
 
 $Menu->Id = $Data['Menu_Id'];
 

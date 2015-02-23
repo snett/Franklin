@@ -1,6 +1,6 @@
 <?php
 
-$Page = new \Franklin\Basics\Page($VirtualParent);
+$Page = new \Franklin\Component\Page($VirtualParent);
 
 $Page->Id = $Data['Page_Id'];
 

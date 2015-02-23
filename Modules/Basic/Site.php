@@ -1,28 +1,20 @@
 <?php
 
 /**
- * Page Module
+ * Site Module
  *
  * @author Bálint Horváth <balint@snett.net>
  */
 
-namespace Franklin\Basics;
+namespace Franklin\Basic;
 
-class Page extends \Franklin\System\Object{
+class Site extends \Franklin\System\Object{
 
     public $Id;
     public $Name;
-    public $Status;
+    public $Domain;
+    public $Status;     //Category status {Status Object}
     public $Language;
-    public $CleanURL;
-    public $Revision;
-    public $Intro;
-    public $Content;
-    
-    public $TimeCreated;
-    public $TimeModified;
-    public $TimeRemoved;
-    public $UserTouched;
     
     public function __construct($Parent) {
         parent::__construct($Parent);

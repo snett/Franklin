@@ -1,6 +1,6 @@
 <?php
 
-$Sidebar = new \Franklin\Basics\Sidebar($VirtualParent);
+$Sidebar = new \Franklin\Component\Sidebar($VirtualParent);
 
 $Sidebar->Id = $Data['Sidebar_Id'];
 $Sidebar->Name = $Data['Sidebar_Name'];

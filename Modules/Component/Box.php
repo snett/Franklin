@@ -1,24 +1,27 @@
 <?php
 
 /**
- * Site Module
+ * Box Module
  *
  * @author Bálint Horváth <balint@snett.net>
  */
 
-namespace Franklin\Basics;
+namespace Franklin\Component;
 
-class Site extends \Franklin\System\Object{
+class Box extends \Franklin\System\Object{
 
     public $Id;
     public $Name;
-    public $Domain;
-    public $Status;     //Category status {Status Object}
+    public $Status;
     public $Language;
+    public $CleanURL;
+    public $Revision;
+    public $Title;
+    public $Place;
+    public $Content;
     
     public function __construct($Parent) {
         parent::__construct($Parent);
-        $this->Status = new Status($this);
         $this->Language = new \Franklin\Data\Language($this);
     }
     

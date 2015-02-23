@@ -15,7 +15,7 @@
         <Field>
             <Name>Name</Name>
             <Type>string</Type>
-            <Length>64</Length>
+            <Length>128</Length>
             <Required>true</Required>
             <NotNull>true</NotNull>
         </Field>
@@ -23,39 +23,8 @@
             <Name>Status</Name>
             <Type>object</Type>
             <Object>Status</Object>
-            <Class>\Franklin\Basics\Status</Class>
+            <Class>\Franklin\Basic\Status</Class>
             <Relation>one</Relation>
-        </Field>
-        <Field>
-            <Name>Language</Name>
-            <Type>object</Type>
-            <Object>Language</Object>
-            <Class>\Franklin\Data\Language</Class>
-            <Relation>one</Relation>
-        </Field>
-        <Field>
-            <Name>CleanURL</Name>
-            <Type>string</Type>
-            <Length>128</Length>
-        </Field>
-        <Field>
-            <Name>Revision</Name>
-            <Type>int</Type>
-            <Length>8</Length>
-        </Field>
-        <Field>
-            <Name>Place</Name>
-            <Type>string</Type>
-            <Length>24</Length>
-        </Field>
-        <Field>
-            <Name>Title</Name>
-            <Type>string</Type>
-            <Length>256</Length>
-        </Field>
-        <Field>
-            <Name>Content</Name>
-            <Type>text</Type>
         </Field>
         <Field>
             <Name>UserTouched</Name>
